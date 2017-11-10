@@ -9,17 +9,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CORRIDA_EQUIPE")
-public class CorridaEquipe {
+@Table(name = "CORRIDA_PILOTO")
+public class CorridaPiloto {
 	
 	private int id;
-	private String fendaInicio;
-	private String fendaCorrente;
+	private int janelasTotal;
 	private int janelasRealizadas;
-	private Corrida corrida;
-	private Equipe equipe;
+	private boolean emCorrida;
+	private CorridaEquipe corridaEquipe;
+	private Piloto piloto;
 	
-	public CorridaEquipe() {
+	public CorridaPiloto() {
 		super();
 	}
 	
@@ -33,20 +33,12 @@ public class CorridaEquipe {
 		this.id = id;
 	}
 
-	public String getFendaInicio() {
-		return fendaInicio;
+	public int getJanelasTotal() {
+		return janelasTotal;
 	}
 
-	public void setFendaInicio(String fendaInicio) {
-		this.fendaInicio = fendaInicio;
-	}
-
-	public String getFendaCorrente() {
-		return fendaCorrente;
-	}
-
-	public void setFendaCorrente(String fendaCorrente) {
-		this.fendaCorrente = fendaCorrente;
+	public void setJanelasTotal(int janelasTotal) {
+		this.janelasTotal = janelasTotal;
 	}
 
 	public int getJanelasRealizadas() {
@@ -57,24 +49,32 @@ public class CorridaEquipe {
 		this.janelasRealizadas = janelasRealizadas;
 	}
 
-	@ManyToOne
-    @JoinColumn(name = "id_corrida")
-	public Corrida getCorrida() {
-		return corrida;
+	public boolean isEmCorrida() {
+		return emCorrida;
 	}
 
-	public void setCorrida(Corrida corrida) {
-		this.corrida = corrida;
+	public void setEmCorrida(boolean emCorrida) {
+		this.emCorrida = emCorrida;
 	}
 
 	@ManyToOne
-    @JoinColumn(name = "id_equipe")
-	public Equipe getEquipe() {
-		return equipe;
+    @JoinColumn(name = "id_corrida_equipe")
+	public CorridaEquipe getCorridaEquipe() {
+		return corridaEquipe;
 	}
 
-	public void setEquipe(Equipe equipe) {
-		this.equipe = equipe;
+	public void setCorridaEquipe(CorridaEquipe corridaEquipe) {
+		this.corridaEquipe = corridaEquipe;
+	}
+
+	@ManyToOne
+    @JoinColumn(name = "id_piloto")
+	public Piloto getPiloto() {
+		return piloto;
+	}
+
+	public void setPiloto(Piloto piloto) {
+		this.piloto = piloto;
 	}
 
 	@Override
@@ -93,7 +93,7 @@ public class CorridaEquipe {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CorridaEquipe other = (CorridaEquipe) obj;
+		CorridaPiloto other = (CorridaPiloto) obj;
 		if (id != other.id)
 			return false;
 		return true;
