@@ -9,15 +9,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "CORRIDA")
 public class Corrida {
 	
 	private int id;
+	
+	@NotNull
 	private String nome;
+	
+	@NotNull
 	private int quantidadeFendas;
-	private int duracaoTotal;
+	
+	@NotNull
+	private int duracaoMaxima;
+	
+	@NotNull
+	private int quantidadeEquipes;
+	
+	@NotNull
+	private int maximoPilotoEquipe;
+	
+	private int tempoTrocaFenda;
+	private int tempoTrocaJanela;
 	private int duracaoJanela;
 	private int totalJanelas;
 	private Set<CorridaEquipe> corridasEquipes;
@@ -52,12 +68,44 @@ public class Corrida {
 		this.quantidadeFendas = quantidadeFendas;
 	}
 
-	public int getDuracaoTotal() {
-		return duracaoTotal;
+	public int getDuracaoMaxima() {
+		return duracaoMaxima;
 	}
 
-	public void setDuracaoTotal(int duracaoTotal) {
-		this.duracaoTotal = duracaoTotal;
+	public void setDuracaoMaxima(int duracaoMaxima) {
+		this.duracaoMaxima = duracaoMaxima;
+	}
+
+	public int getQuantidadeEquipes() {
+		return quantidadeEquipes;
+	}
+
+	public void setQuantidadeEquipes(int quantidadeEquipes) {
+		this.quantidadeEquipes = quantidadeEquipes;
+	}
+
+	public int getMaximoPilotoEquipe() {
+		return maximoPilotoEquipe;
+	}
+
+	public void setMaximoPilotoEquipe(int maximoPilotoEquipe) {
+		this.maximoPilotoEquipe = maximoPilotoEquipe;
+	}
+
+	public int getTempoTrocaFenda() {
+		return tempoTrocaFenda;
+	}
+
+	public void setTempoTrocaFenda(int tempoTrocaFenda) {
+		this.tempoTrocaFenda = tempoTrocaFenda;
+	}
+
+	public int getTempoTrocaJanela() {
+		return tempoTrocaJanela;
+	}
+
+	public void setTempoTrocaJanela(int tempoTrocaJanela) {
+		this.tempoTrocaJanela = tempoTrocaJanela;
 	}
 
 	public int getDuracaoJanela() {
