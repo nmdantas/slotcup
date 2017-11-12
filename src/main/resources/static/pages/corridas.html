@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/bootstrap-table.css" />
+	
+	<style>
+        .update {
+            color: #333;
+            margin-right: 5px;
+        }
+        .remove {
+            color: red;
+            margin-left: 5px;
+        }
+        .alert {
+            padding: 0 14px;
+            margin-bottom: 0;
+            display: inline-block;
+        }
+    </style>
+    
+</head>
+<body>
+
+	<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+		style="">
+		<div class="container">
+			<a href="../" class="navbar-brand">Bootswatch</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation" style="">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+						id="themes">Themes <span class="caret"></span></a>
+						<div class="dropdown-menu" aria-labelledby="themes">
+							<a class="dropdown-item" href="../default/">Default</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="../cerulean/">Cerulean</a> <a
+								class="dropdown-item" href="../cosmo/">Cosmo</a> <a
+								class="dropdown-item" href="../cyborg/">Cyborg</a> <a
+								class="dropdown-item" href="../darkly/">Darkly</a> <a
+								class="dropdown-item" href="../flatly/">Flatly</a> <a
+								class="dropdown-item" href="../journal/">Journal</a> <a
+								class="dropdown-item" href="../litera/">Litera</a> <a
+								class="dropdown-item" href="../lumen/">Lumen</a> <a
+								class="dropdown-item" href="../lux/">Lux</a> <a
+								class="dropdown-item" href="../materia/">Materia</a> <a
+								class="dropdown-item" href="../minty/">Minty</a> <a
+								class="dropdown-item" href="../pulse/">Pulse</a> <a
+								class="dropdown-item" href="../sandstone/">Sandstone</a> <a
+								class="dropdown-item" href="../simplex/">Simplex</a> <a
+								class="dropdown-item" href="../sketchy/">Sketchy</a> <a
+								class="dropdown-item" href="../slate/">Slate</a> <a
+								class="dropdown-item" href="../solar/">Solar</a> <a
+								class="dropdown-item" href="../spacelab/">Spacelab</a> <a
+								class="dropdown-item" href="../superhero/">Superhero</a> <a
+								class="dropdown-item" href="../united/">United</a> <a
+								class="dropdown-item" href="../yeti/">Yeti</a>
+						</div></li>
+					<li class="nav-item"><a class="nav-link" href="../help/">Help</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="http://blog.bootswatch.com">Blog</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+						id="download" aria-expanded="false">Lux <span class="caret"></span></a>
+						<div class="dropdown-menu" aria-labelledby="download">
+							<a class="dropdown-item"
+								href="https://jsfiddle.net/bootswatch/8zet8yhz/">Open in
+								JSFiddle</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="../4/lux/bootstrap.min.css">bootstrap.min.css</a>
+							<a class="dropdown-item" href="../4/lux/bootstrap.css">bootstrap.css</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="../4/lux/_variables.scss">_variables.scss</a>
+							<a class="dropdown-item" href="../4/lux/_bootswatch.scss">_bootswatch.scss</a>
+						</div></li>
+				</ul>
+
+				<ul class="nav navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link"
+						href="http://builtwithbootstrap.com/" target="_blank">Built
+							With Bootstrap</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container" style="margin-top:110px">
+		<h1>Cadastro de Corridas</h1>
+        <p class="toolbar">
+            <a class="create btn btn-default" href="javascript:">Novo</a>
+            <span class="alert"></span>
+        </p>
+		<div class="row">
+			<div class="col-lg-12">
+				<table id="table"
+					   data-show-refresh="true"
+                       data-show-columns="true"
+                       data-search="true"
+               		   data-query-params="queryParams"
+		               data-toolbar=".toolbar"
+					   data-response-handler="responseHandler">
+		            <thead>
+		            <tr>
+		                <th data-field="nome">Nome</th>
+		                <th data-field="duracaoMaxima">Duração Corrida</th>
+		                <th data-field="quantidadeEquipes">Qtde. Equipes</th>
+		                <th data-field="maximoPilotoEquipe">Max. Piloto por Equipes</th>
+		                <th data-field="duracaoJanela">Tempo Janela (min)</th>
+		                <th data-field="totalJanelas">Qtde. Janela (seg)</th>
+		                <th data-field="action"
+		                    data-align="center"
+		                    data-formatter="actionFormatter"
+		                    data-events="actionEvents">Ações</th>
+		            </tr>
+		            </thead>
+		        </table>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/js/jquery.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/bootstrap-table.js"></script>
+	<script src="/js/bootstrap-table-pt-BR.js"></script>
+	
+	<script type="text/javascript">
+		var API_URL = 'http://localhost:8080/slotcup/api/corridas';
+	
+	    var $table = $('#table').bootstrapTable({url: API_URL}),
+	        $modal = $('#modal').modal({show: false}),
+	        $alert = $('.alert').hide();
+	
+	    $(function () {
+	        // create event
+	        $('.create').click(function () {
+	            showModal($(this).text());
+	        });
+	
+	        $modal.find('.submit').click(function () {
+	            var row = {};
+	
+	            $modal.find('input[name]').each(function () {
+	                row[$(this).attr('name')] = $(this).val();
+	            });
+	
+	            $.ajax({
+	                // url: API_URL + ($modal.data('id') || ''),
+					url: ($modal.data('_links.href') || API_URL),
+	                type: $modal.data('_links.href') ? 'put' : 'post',
+	                contentType: 'application/json',
+	                data: JSON.stringify(row),
+	                success: function () {
+	                    $modal.modal('hide');
+	                    $table.bootstrapTable('refresh');
+	                    showAlert('Item ' + ($modal.data('_links.href') ? 'alterado' : 'criado') + ' com sucesso!', 'success');
+	                },
+	                error: function () {
+	                    $modal.modal('hide');
+	                    showAlert('Erro ao ' + ($modal.data('_links.href') ? 'alterar' : 'criar') + ' o item!', 'danger');
+	                }
+	            });
+	        });
+	    });
+	
+	    function queryParams(params) {
+	        return {};
+	    }
+	
+	    function actionFormatter(value) {
+	        return [
+	            '<a class="update" href="javascript:" title="Alterar"><i class="glyphicon glyphicon-edit"></i></a>',
+	            '<a class="remove" href="javascript:" title="Excluir"><i class="glyphicon glyphicon-remove-circle"></i></a>',
+	        ].join('');
+	    }
+	
+	    // update and delete events
+	    window.actionEvents = {
+	        'click .update': function (e, value, row) {
+	            showModal($(this).attr('title'), row);
+	        },
+	        'click .remove': function (e, value, row) {
+	            if (confirm('Você tem certeza que deseja excluir este item?')) {
+	                $.ajax({
+	                    url: row._links.self.href,
+	                    type: 'delete',
+	                    success: function () {
+	                        $table.bootstrapTable('refresh');
+	                        showAlert('Item excluido com sucesso!', 'success');
+	                    },
+	                    error: function () {
+	                        showAlert('Erro ao excluir o registro!', 'danger');
+	                    }
+	                })
+	            }
+	        }
+	    };
+	
+	    function showModal(title, row) {
+	        row = row || {
+	            nome: '',
+	            quantidadeFendas: 0,
+	            duracaoMaxima: 0
+	        }; // default row value
+	
+	        $modal.data('_links.href', (row._links? row._links.self.href : undefined ));
+	        $modal.find('.modal-title').text(title);
+	        for (var name in row) {
+	            $modal.find('input[name="' + name + '"]').val(row[name]);
+	        }
+	        $modal.modal('show');
+	    }
+	
+	    function showAlert(title, type) {
+	        $alert.attr('class', 'alert alert-' + type || 'success')
+	              .html('<i class="glyphicon glyphicon-check"></i> ' + title).show();
+	        setTimeout(function () {
+	            $alert.hide();
+	        }, 3000);
+	    }
+		
+		function responseHandler(res) {
+			return res._embedded.corridas;
+		}
+	
+	</script>
+</body>
+</html>
