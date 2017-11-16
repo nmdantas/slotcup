@@ -1,35 +1,38 @@
 package com.br.fabbrika.slotcup.model;
 
+import java.util.Date;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "CORRIDA")
+@EntityListeners(AuditingEntityListener.class)
+@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
 public class Corrida {
 	
 	private int id;
 	
-	@NotNull
+	@NotBlank
 	private String nome;
 	
-	@NotNull
+	@NotBlank
 	private int quantidadeFendas;
 	
-	@NotNull
+	@NotBlank
 	private int duracaoMaxima;
 	
-	@NotNull
+	@NotBlank
 	private int quantidadeEquipes;
 	
-	@NotNull
+	@NotBlank
 	private int maximoPilotoEquipe;
 	
 	private int tempoTrocaFenda;
@@ -37,6 +40,16 @@ public class Corrida {
 	private int duracaoJanela;
 	private int totalJanelas;
 	private Set<CorridaEquipe> corridasEquipes;
+	
+	@Column(nullable = false, updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
+    private Date createdAt;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    @LastModifiedDate
+    private Date updatedAt;
 	
 	public Corrida() {
 		super();
@@ -122,6 +135,22 @@ public class Corrida {
 
 	public void setTotalJanelas(int totalJanelas) {
 		this.totalJanelas = totalJanelas;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
 	@OneToMany(mappedBy = "corrida", cascade = CascadeType.ALL)
