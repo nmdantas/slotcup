@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Getting Started: Serving Web Content</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<link rel="icon" href="./favicon.ico">
+	<link rel="stylesheet" href="../css/themes/lux/bootstrap.css" />
+	<link rel="stylesheet" href="../css/font-awesome.css" />
+	<link rel="stylesheet" href="../css/site.css" />
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+		<a class="navbar-brand" href="javascript:void(0);">SlotCup</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarColor03" aria-controls="navbarColor03"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor03">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="./settings.html">Configuração</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./race.html">Corrida</a>
+				</li>				
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container margin-container">
+		<div class="bd-callout bd-callout-danger">
+			<h4>Configurações gerais da corrida</h4>
+			<br />
+			<div class="form-group row">
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-clock-o"></i> TEMPO TOTAL DA CORRIDA</label>
+				<div class="col-sm-9">
+					<input type="number" class="form-control"
+						placeholder="Tempo total da corrida em minutos">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-users"></i> EQUIPES</label>
+				<div class="col-sm-9">
+					<input type="number" class="form-control"
+						placeholder="Quantidade de equipes">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-user-plus"></i> PILOTOS POR EQUIPE</label>
+				<div class="col-sm-9">
+					<input type="number" class="form-control"
+						placeholder="Número máximo de pilotos por equipe">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-refresh"></i> TROCA DE FENDA</label>
+				<div class="col-sm-9">
+					<input type="number" class="form-control"
+						placeholder="Tempo para troca de fenda">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-exchange"></i> TROCA DE JANELA</label>
+				<div class="col-sm-9">
+					<input type="number" class="form-control"
+						placeholder="Tempos para troca de janela">
+				</div>
+			</div>			
+			<div class="row float-right margin-right-zero">
+				<button type="button" class="btn btn-outline-primary">Calcular</button>
+			</div>
+			<br />
+			<br />			
+		</div>
+				
+		<div class="bd-callout bd-callout-info">
+			<h4>Informações da corrida</h4>
+			<br />
+			<div class="form-group row">
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-refresh"></i> TROCAS DE FENDAS</label>
+				<div class="col-sm-3">
+					<input type="text" readonly class="form-control text-center" value="6">
+				</div>
+				
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-exchange"></i> TROCAS DE JANELAS</label>
+				<div class="col-sm-3">
+					<input type="text" readonly class="form-control text-center" value="5">
+				</div>
+				
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-clock-o"></i> TEMPO DE JANELA</label>
+				<div class="col-sm-3">
+					<input type="text" readonly class="form-control text-center" value="16">
+				</div>
+				
+				<label for="" class="col-sm-3 col-form-label"><i class="fa fa-window-maximize"></i> QUANTIDADE DE JANELAS</label>
+				<div class="col-sm-3">
+					<input type="text" readonly class="form-control text-center" value="44">
+				</div>
+			</div>
+			<br />
+			<div class="row mx-auto" style="width: 201px">
+				<h5>TEMPOS (MINUTOS)</h5>
+			</div>
+			<div class="row">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>Tempo Total de Corrida</td>
+							<td>700</td>
+						</tr>
+						<tr>
+							<td>Tempo Total de Corrida por Corrida</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td>Tempo Total de Troca de Fenda</td>
+							<td>18</td>
+						</tr>
+						<tr>
+							<td>Tempo Total de Troca de Janela</td>
+							<td>2,5</td>
+						</tr>
+						<tr>
+							<td>Tempo Efetivo Total de Corrida</td>
+							<td>704</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row float-right margin-right-zero">
+				<button type="button" class="btn btn-outline-success">Salvar</button>
+			</div>
+			<br />
+			<br />
+		</div>		
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/angular.js"></script>
+	
+	<script src="../js/app/app.js"></script>
+	<script src="../js/app/config.js"></script>
+	<script src="../js/app/controllers/settings-controller.js"></script>
+</body>
+</html>

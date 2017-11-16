@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Getting Started: Serving Web Content</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<link rel="icon" href="./favicon.ico">
+	<link rel="stylesheet" href="../css/themes/lux/bootstrap.css" />
+	<link rel="stylesheet" href="../css/font-awesome.css" />
+	<link rel="stylesheet" href="../css/site.css" />
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+		<a class="navbar-brand" href="javascript:void(0);">SlotCup</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarColor03" aria-controls="navbarColor03"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor03">
+			<ul class="navbar-nav mr-auto">				
+				<li class="nav-item">
+					<a class="nav-link" href="./settings.html">Configuração</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="./race.html">Corrida</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<button class="btn btn-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal">Iniciar&nbsp;&nbsp;<i class="fa fa-play"></i></button>
+				<button class="btn btn-danger my-2 my-sm-0" type="button">Pausar&nbsp;&nbsp;<i class="fa fa-pause"></i></button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container margin-container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card">
+					<h3 class="card-header bg-yellow">Equipe 1
+					<span class="float-right">27/44</span>
+					</h3>
+					<div class="card-body">
+						<h5 class="card-title">
+							<span>Thiago Ito </span>
+							<i class="fa fa-flag-o"></i>
+						</h5>
+						<h6 class="card-subtitle text-muted">Correndo...</h6>
+					</div>
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Janelas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_0" checked/></th>
+									<td>Thiago Ito</td>
+									<td>1/11<i class="fa fa-flag-o"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_0"/></th>
+									<td>Nicholas Dantas</td>
+									<td>5/11<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_0"/></th>
+									<td>Tamires Mota</td>
+									<td>10/11<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_0" disabled/></th>
+									<td>Renata Ito</td>
+									<td>11/11<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer text-primary bg-yellow">
+						4 pilotos
+						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
+					</div>
+				</div>
+				<br />
+			</div>			
+			<div class="col-lg-4">
+				<div class="card">
+					<h3 class="card-header bg-orange">Equipe 2
+					<span class="float-right">27/44</span>
+					</h3>
+					<div class="card-body">
+						<h5 class="card-title">
+							<span>Lorem Ipsum </span>
+							<i class="fa fa-flag-o"></i>
+						</h5>
+						<h6 class="card-subtitle text-muted">Correndo...</h6>
+					</div>
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Janelas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_1" checked/></th>
+									<td>Lorem Ipsum</td>
+									<td>1/15<i class="fa fa-flag-o"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_1"/></th>
+									<td>Lorem Ipsum</td>
+									<td>12/15<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_1" disabled/></th>
+									<td>Lorem Ipsum</td>
+									<td>14/14<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer text-primary bg-orange">
+						3 pilotos
+						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
+					</div>
+				</div>
+				<br />
+			</div>
+			<div class="col-lg-4">
+				<div class="card">
+					<h3 class="card-header">Equipe 3
+					<span class="float-right">27/44</span>
+					</h3>
+					<div class="card-body">
+						<h5 class="card-title">
+							<span>Dolor Sit Amet </span>
+							<i class="fa fa-flag-o"></i>
+						</h5>
+						<h6 class="card-subtitle text-muted">Correndo...</h6>
+					</div>
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Janelas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_2"/></th>
+									<td>Dolor Sit Amet</td>
+									<td>1/15<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_2" checked/></th>
+									<td>Dolor Sit Amet</td>
+									<td>12/15<i class="fa fa-flag-o"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_2" disabled/></th>
+									<td>Dolor Sit Amet</td>
+									<td>14/14<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer text-primary">
+						3 pilotos
+						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
+					</div>
+				</div>
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card">
+					<h3 class="card-header bg-danger">Equipe 4
+					<span class="float-right">27/44</span>
+					</h3>
+					<div class="card-body">
+						<h5 class="card-title">
+							<span>Consectetur Adipiscing </span>
+							<i class="fa fa-flag-o"></i>
+						</h5>
+						<h6 class="card-subtitle text-muted">Correndo...</h6>
+					</div>
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Janelas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_3"/></th>
+									<td>Consectetur Adipiscing</td>
+									<td>1/15<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_3" checked/></th>
+									<td>Consectetur Adipiscing</td>
+									<td>12/15<i class="fa fa-flag-o"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_3" disabled/></th>
+									<td>Consectetur Adipiscing</td>
+									<td>14/14<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer text-primary bg-danger">
+						3 pilotos
+						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
+					</div>
+				</div>
+				<br />
+			</div>			
+			<div class="col-lg-4">
+				<div class="card">
+					<h3 class="card-header bg-success">Equipe 5
+					<span class="float-right">27/44</span>
+					</h3>
+					<div class="card-body">
+						<h5 class="card-title">
+							<span>Elit Sed Do </span>
+							<i class="fa fa-flag-o"></i>
+						</h5>
+						<h6 class="card-subtitle text-muted">Correndo...</h6>
+					</div>
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Janelas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_4"/></th>
+									<td>Elit Sed Do</td>
+									<td>2/9<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_4"/></th>
+									<td>Elit Sed Do</td>
+									<td>3/9<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_4" checked/></th>
+									<td>Elit Sed Do</td>
+									<td>5/9<i class="fa fa-flag-o"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_4" disabled/></th>
+									<td>Elit Sed Do</td>
+									<td>9/9<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_4" disabled/></th>
+									<td>Elit Sed Do</td>
+									<td>8/8<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer text-primary bg-success">
+						5  pilotos
+						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
+					</div>
+				</div>
+				<br />
+			</div>
+			<div class="col-lg-4">
+				<div class="card">
+					<h3 class="card-header bg-info">Equipe 6
+					<span class="float-right">27/44</span>
+					</h3>
+					<div class="card-body">
+						<h5 class="card-title">
+							<span>Eiusmod Tempor </span>
+							<i class="fa fa-flag-o"></i>
+						</h5>
+						<h6 class="card-subtitle text-muted">Correndo...</h6>
+					</div>
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Janelas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_5"/></th>
+									<td>Eiusmod Tempor</td>
+									<td>1/8<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_5"/></th>
+									<td>Eiusmod Tempor</td>
+									<td>1/8<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_5" checked/></th>
+									<td>Eiusmod Tempor</td>
+									<td>4/7<i class="fa fa-flag-o"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_5" disabled/></th>
+									<td>Eiusmod Tempor</td>
+									<td>7/7<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_5" disabled/></th>
+									<td>Eiusmod Tempor</td>
+									<td>7/7<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+								<tr class="table-danger">
+									<th scope="row"><input type="radio" name="radio_5" disabled/></th>
+									<td>Eiusmod Tempor</td>
+									<td>7/7<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer text-primary bg-info">
+						6 pilotos
+						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
+					</div>
+				</div>
+				<br />
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Iniciar Nova Janela</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Deseja inicar uma nova janela com os seguintes pilotos?</p>					
+					<ul class="list-group">
+						<li class="list-group-item list-group-item-warning">Thiago Ito</li>
+						<li class="list-group-item list-group-item-orange">Lorem Ipsum</li>
+						<li class="list-group-item list-group-item-light">Dolor Sit Amet</li>
+						<li class="list-group-item list-group-item-danger">Consectetur Adipiscing</li>
+						<li class="list-group-item list-group-item-success">Elit Sed Do</li>
+						<li class="list-group-item list-group-item-info">Eiusmod Tempor</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Não</button>
+					<button type="button" class="btn btn-primary">Sim</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/angular.js"></script>
+	
+	<script src="../js/app/app.js"></script>
+	<script src="../js/app/config.js"></script>
+	<script src="../js/app/controllers/race-controller.js"></script>
+</body>
+</html>
