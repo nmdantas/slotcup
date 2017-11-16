@@ -1,11 +1,15 @@
 package com.br.fabbrika.slotcup.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +22,8 @@ public class CorridaEquipe {
 	private int janelasRealizadas;
 	private Corrida corrida;
 	private Equipe equipe;
+	
+	private Set<CorridaPiloto> corridaPilotos;
 	
 	public CorridaEquipe() {
 		super();
@@ -75,6 +81,15 @@ public class CorridaEquipe {
 
 	public void setEquipe(Equipe equipe) {
 		this.equipe = equipe;
+	}
+
+	@OneToMany(mappedBy = "corridaEquipe", cascade = CascadeType.ALL)
+	public Set<CorridaPiloto> getCorridaPilotos() {
+		return corridaPilotos;
+	}
+
+	public void setCorridaPilotos(Set<CorridaPiloto> corridaPilotos) {
+		this.corridaPilotos = corridaPilotos;
 	}
 
 	@Override
