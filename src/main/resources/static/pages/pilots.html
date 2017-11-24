@@ -12,53 +12,55 @@
 	<link rel="stylesheet" href="../css/site.css" />
 </head>
 <body ng-app="app">
-
-	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-		<a class="navbar-brand" href="javascript:void(0);">SlotCup</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarColor03" aria-controls="navbarColor03"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarColor03">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="./pilots.html">Pilotos</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./settings.html">Configuração</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./race.html">Corrida</a>
-				</li>				
-			</ul>
-		</div>
-	</nav>
-
-	<div class="container margin-container" ng-controller='PilotCtrl'>
-		<div class="bd-callout bd-callout-danger">
-			<h4>Cadastro de Pilotos</h4>
-			<br />
-			
-			<div class="row">
-				<table class="table">
-					<tbody>
-						<tr ng-repeat="pilot in pilots">
-							<td width="80%">{{ pilot.nome }}</td>
-							<td>Edit</td>
-						</tr>
-						<tr ng-if="pilots.size > 0" width="20%">
-							<td>Nenhum resgistro encontrato</td>
-						</tr>
-					</tbody>
-				</table>
+	<div ng-controller='PilotCtrl'>
+		<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+			<a class="navbar-brand" href="javascript:void(0);">SlotCup</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarColor03" aria-controls="navbarColor03"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	
+			<div class="collapse navbar-collapse" id="navbarColor03">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="./pilots.html">Pilotos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./settings.html">Configuração</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./race.html">Corrida</a>
+					</li>				
+				</ul>
 			</div>
-			<div class="row float-right margin-right-zero">
-				<button type="button" class="btn btn-outline-primary" ng-click="newPilot();">Novo</button>
+		</nav>
+	
+		<div class="container margin-container">
+			<div class="bd-callout bd-callout-danger">
+				<h4>Lista de Pilotos</h4>
+				<br />
+				
+				<div class="row">
+					<table class="table">
+						<tbody>
+							<tr ng-repeat="pilot in pilots">
+								<td width="80%">{{ pilot.nome }}</td>
+								<td><a href="" ng-click="editPilot(pilot);">Alterar</a></td>
+							</tr>
+							<tr ng-if="pilots.size > 0" width="20%">
+								<td>Nenhum resgistro encontrato</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="row float-right margin-right-zero">
+					<button type="button" class="btn btn-outline-primary" ng-click="newPilot();">Novo</button>
+				</div>
+				<br />
+				<br />			
 			</div>
-			<br />
-			<br />			
 		</div>
 		
 		<div id="pilotModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -86,7 +88,9 @@
 		    </div>
 		  </div>
 		</div>
+			
 	</div>
+	
 	<script src="../js/jquery.js"></script>
 	<script src="../js/popper.js"></script>
 	<script src="../js/bootstrap.js"></script>

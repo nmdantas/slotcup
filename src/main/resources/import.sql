@@ -55,8 +55,8 @@ INSERT INTO equipe (nome,created_at,updated_at) VALUES ("Nova Equipe",CURRENT_TI
 --
 -- Cadastro de Corrida
 --
-INSERT INTO `slotcup`.`corrida` (`nome`,`duracao_maxima`,`quantidade_equipes`,`quantidade_fendas`,`maximo_piloto_equipe`,`tempo_troca_fenda`,`tempo_troca_janela`,`duracao_janela`,`total_janelas`,`created_at`,`updated_at`) VALUES ("DG Slot 12 Horas 10 Anos - PRÓ", 720, 7, 6, 6, 3, 30,0,0,CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
-INSERT INTO `slotcup`.`corrida` (`nome`,`duracao_maxima`,`quantidade_equipes`,`quantidade_fendas`,`maximo_piloto_equipe`,`tempo_troca_fenda`,`tempo_troca_janela`,`duracao_janela`,`total_janelas`,`created_at`,`updated_at`) VALUES ("DG Slot 12 Horas 10 Anos - LIGHT", 720, 6, 6, 5, 3, 30,0,0,CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+INSERT INTO `slotcup`.`corrida` (`nome`,`duracao_maxima`,`quantidade_equipes`,`quantidade_fendas`,`maximo_piloto_equipe`,`tempo_troca_fenda`,`tempo_troca_janela`,`duracao_janela`,`total_janelas`,`totalTrocaFendas`,`totalTrocaJanela`,`created_at`,`updated_at`) VALUES ("DG Slot 12 Horas 10 Anos - PRÓ", 720, 7, 6, 6, 3, 30,0,0,6,5,CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+INSERT INTO `slotcup`.`corrida` (`nome`,`duracao_maxima`,`quantidade_equipes`,`quantidade_fendas`,`maximo_piloto_equipe`,`tempo_troca_fenda`,`tempo_troca_janela`,`duracao_janela`,`total_janelas`,`totalTrocaFendas`,`totalTrocaJanela`,`created_at`,`updated_at`) VALUES ("DG Slot 12 Horas 10 Anos - LIGHT", 720, 6, 6, 5, 3, 30,0,0,5,5,CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 
 --
 -- Cadastro de Corrida Equipe

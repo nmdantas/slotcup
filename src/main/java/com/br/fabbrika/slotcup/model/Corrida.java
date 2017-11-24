@@ -23,22 +23,20 @@ public class Corrida {
 	@NotBlank
 	private String nome;
 	
-	@NotBlank
 	private int quantidadeFendas;
 	
-	@NotBlank
 	private int duracaoMaxima;
 	
-	@NotBlank
 	private int quantidadeEquipes;
 	
-	@NotBlank
 	private int maximoPilotoEquipe;
 	
 	private int tempoTrocaFenda;
 	private int tempoTrocaJanela;
 	private int duracaoJanela;
 	private int totalJanelas;
+	private int totalTrocaFendas;
+	private int totalTrocaJanela;
 	private Set<CorridaEquipe> corridasEquipes;
 	
 	@Column(nullable = false, updatable = false)
@@ -149,9 +147,27 @@ public class Corrida {
 		return updatedAt;
 	}
 
+	public int getTotalTrocaFendas() {
+		return totalTrocaFendas;
+	}
+
+	public void setTotalTrocaFendas(int totalTrocaFendas) {
+		this.totalTrocaFendas = totalTrocaFendas;
+	}
+
+	public int getTotalTrocaJanela() {
+		return totalTrocaJanela;
+	}
+
+	public void setTotalTrocaJanela(int totalTrocaJanela) {
+		this.totalTrocaJanela = totalTrocaJanela;
+	}
+
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	
+	
 
 	@OneToMany(mappedBy = "corrida", cascade = CascadeType.ALL)
 	public Set<CorridaEquipe> getCorridasEquipes() {
