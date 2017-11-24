@@ -83,5 +83,16 @@
 			});
         }
         
+        $scope.calcularTotaisTempos = function() {
+        	
+        	$scope.corrida = $scope.corrida || {};
+        	
+        	$scope.corrida.tempoEfetivoCorrida = Math.round($scope.corrida.totalJanelas * $scope.corrida.duracaoJanela);
+        	$scope.corrida.tempoTotalTrocaFenda = Math.round($scope.corrida.tempoTrocaFenda * $scope.corrida.totalTrocaFendas);
+        	$scope.corrida.tempoTotalTrocaJanela = Math.round(($scope.corrida.tempoTrocaJanela / 60) * $scope.corrida.totalTrocaJanela);
+        	$scope.corrida.tempoCorridaEquipe = Math.round($scope.corrida.tempoEfetivoCorrida / $scope.corrida.quantidadeEquipes);
+        	$scope.corrida.tempoEfetivoTotalCorrida = Math.round($scope.corrida.tempoEfetivoCorrida + $scope.corrida.tempoTotalTrocaJanela + $scope.corrida.tempoTotalTrocaFenda);
+        }
+        
     }
 })();

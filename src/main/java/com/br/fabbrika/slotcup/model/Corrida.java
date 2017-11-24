@@ -37,6 +37,13 @@ public class Corrida {
 	private int totalJanelas;
 	private int totalTrocaFendas;
 	private int totalTrocaJanela;
+	
+	private int tempoEfetivoCorrida;
+	private int tempoCorridaEquipe;
+	private int tempoTotalTrocaFenda;
+	private int tempoTotalTrocaJanela;
+	private int tempoEfetivoTotalCorrida;
+	
 	private Set<CorridaEquipe> corridasEquipes;
 	
 	@Column(nullable = false, updatable = false)
@@ -167,7 +174,46 @@ public class Corrida {
 		this.updatedAt = updatedAt;
 	}
 	
-	
+
+	public int getTempoEfetivoCorrida() {
+		return tempoEfetivoCorrida;
+	}
+
+	public void setTempoEfetivoCorrida(int tempoEfetivoCorrida) {
+		this.tempoEfetivoCorrida = tempoEfetivoCorrida;
+	}
+
+	public int getTempoCorridaEquipe() {
+		return tempoCorridaEquipe;
+	}
+
+	public void setTempoCorridaEquipe(int tempoCorridaEquipe) {
+		this.tempoCorridaEquipe = tempoCorridaEquipe;
+	}
+
+	public int getTempoTotalTrocaFenda() {
+		return tempoTotalTrocaFenda;
+	}
+
+	public void setTempoTotalTrocaFenda(int tempoTotalTrocaFenda) {
+		this.tempoTotalTrocaFenda = tempoTotalTrocaFenda;
+	}
+
+	public int getTempoTotalTrocaJanela() {
+		return tempoTotalTrocaJanela;
+	}
+
+	public void setTempoTotalTrocaJanela(int tempoTotalTrocaJanela) {
+		this.tempoTotalTrocaJanela = tempoTotalTrocaJanela;
+	}
+
+	public int getTempoEfetivoTotalCorrida() {
+		return tempoEfetivoTotalCorrida;
+	}
+
+	public void setTempoEfetivoTotalCorrida(int tempoEfetivoTotalCorrida) {
+		this.tempoEfetivoTotalCorrida = tempoEfetivoTotalCorrida;
+	}
 
 	@OneToMany(mappedBy = "corrida", cascade = CascadeType.ALL)
 	public Set<CorridaEquipe> getCorridasEquipes() {
