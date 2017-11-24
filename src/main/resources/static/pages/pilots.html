@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../css/font-awesome.css" />
 	<link rel="stylesheet" href="../css/site.css" />
 </head>
-<body>
+<body ng-app="app">
 
 	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
 		<a class="navbar-brand" href="javascript:void(0);">SlotCup</a>
@@ -36,7 +36,7 @@
 		</div>
 	</nav>
 
-	<div class="container margin-container">
+	<div class="container margin-container" ng-controller='PilotCtrl'>
 		<div class="bd-callout bd-callout-danger">
 			<h4>Cadastro de Pilotos</h4>
 			<br />
@@ -44,66 +44,49 @@
 			<div class="row">
 				<table class="table">
 					<tbody>
-						<tr>
-							<td>Thiago</td>
+						<tr ng-repeat="pilot in pilots">
+							<td width="80%">{{ pilot.nome }}</td>
 							<td>Edit</td>
 						</tr>
-						<tr>
-							<td>Fernando</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Del</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Cassiano</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td class="col-md-10">Thiago</td>
-							<td class="col-md-10">Edit</td>
-						</tr>
-						<tr>
-							<td>Fernando</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Del</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Cassiano</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td class="col-md-10">Thiago</td>
-							<td class="col-md-10">Edit</td>
-						</tr>
-						<tr>
-							<td>Fernando</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Del</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Cassiano</td>
-							<td>Edit</td>
+						<tr ng-if="pilots.size > 0" width="20%">
+							<td>Nenhum resgistro encontrato</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="row float-right margin-right-zero">
-				<button type="button" class="btn btn-outline-primary">Novo</button>
+				<button type="button" class="btn btn-outline-primary" ng-click="newPilot();">Novo</button>
 			</div>
 			<br />
 			<br />			
 		</div>
-	
+		
+		<div id="pilotModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Piloto</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <div class="form-group row">
+					<label for="" class="col-sm-3 col-form-label"><i class="fa fa-clock-o"></i> NOME</label>
+					<div class="col-sm-9">
+						<input type="text" maxlength="40" class="form-control" ng-model="pilot.nome"
+							placeholder="Nome do piloto">
+					</div>
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" ng-click="savePilot();">Salvar</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
-
 	<script src="../js/jquery.js"></script>
 	<script src="../js/popper.js"></script>
 	<script src="../js/bootstrap.js"></script>
@@ -111,6 +94,6 @@
 	
 	<script src="../js/app/app.js"></script>
 	<script src="../js/app/config.js"></script>
-	<script src="../js/app/controllers/pilots-controller.js"></script>
+	<script src="../js/app/controllers/pilot-controller.js"></script>
 </body>
 </html>
