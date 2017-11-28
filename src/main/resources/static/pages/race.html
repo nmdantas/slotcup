@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="app">
 <head>
 	<title>Getting Started: Serving Web Content</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +9,10 @@
 	<link rel="icon" href="./favicon.ico">
 	<link rel="stylesheet" href="../css/themes/lux/bootstrap.css" />
 	<link rel="stylesheet" href="../css/font-awesome.css" />
+	<link rel="stylesheet" href="../css/loading-bar.css" />
 	<link rel="stylesheet" href="../css/site.css" />
 </head>
-<body>
-
+<body ng-controller="RaceCtrl">
 	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
 		<a class="navbar-brand" href="javascript:void(0);">SlotCup</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -34,6 +34,10 @@
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
+				<select class="custom-select" ng-model="comboSelectedRace" ng-change="raceOnChange();">
+					<option selected value="">Selecione uma corrida</option>
+					<option ng-repeat="race in races" value="{{ race }}">{{ race.nome }}</option>
+				</select>
 				<button class="btn btn-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal">Iniciar&nbsp;&nbsp;<i class="fa fa-play"></i></button>
 				<button class="btn btn-danger my-2 my-sm-0" type="button">Pausar&nbsp;&nbsp;<i class="fa fa-pause"></i></button>
 			</form>
@@ -56,13 +60,6 @@
 					</div>
 					<div class="card-body">
 						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Janelas</th>
-								</tr>
-							</thead>
 							<tbody>
 								<tr>
 									<th scope="row"><input type="radio" name="radio_0" checked/></th>
@@ -79,17 +76,13 @@
 									<td>Tamires Mota</td>
 									<td>10/11<i class="fa fa-flag"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_0" disabled/></th>
 									<td>Renata Ito</td>
 									<td>11/11<i class="fa fa-flag-checkered"></i></td>
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="card-footer text-primary bg-yellow">
-						4 pilotos
-						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
 					</div>
 				</div>
 				<br />
@@ -108,13 +101,6 @@
 					</div>
 					<div class="card-body">
 						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Janelas</th>
-								</tr>
-							</thead>
 							<tbody>
 								<tr>
 									<th scope="row"><input type="radio" name="radio_1" checked/></th>
@@ -126,17 +112,13 @@
 									<td>Lorem Ipsum</td>
 									<td>12/15<i class="fa fa-flag"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_1" disabled/></th>
 									<td>Lorem Ipsum</td>
 									<td>14/14<i class="fa fa-flag-checkered"></i></td>
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="card-footer text-primary bg-orange">
-						3 pilotos
-						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
 					</div>
 				</div>
 				<br />
@@ -155,13 +137,6 @@
 					</div>
 					<div class="card-body">
 						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Janelas</th>
-								</tr>
-							</thead>
 							<tbody>
 								<tr>
 									<th scope="row"><input type="radio" name="radio_2"/></th>
@@ -173,17 +148,13 @@
 									<td>Dolor Sit Amet</td>
 									<td>12/15<i class="fa fa-flag-o"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_2" disabled/></th>
 									<td>Dolor Sit Amet</td>
 									<td>14/14<i class="fa fa-flag-checkered"></i></td>
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="card-footer text-primary">
-						3 pilotos
-						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
 					</div>
 				</div>
 				<br />
@@ -204,13 +175,6 @@
 					</div>
 					<div class="card-body">
 						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Janelas</th>
-								</tr>
-							</thead>
 							<tbody>
 								<tr>
 									<th scope="row"><input type="radio" name="radio_3"/></th>
@@ -222,17 +186,13 @@
 									<td>Consectetur Adipiscing</td>
 									<td>12/15<i class="fa fa-flag-o"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_3" disabled/></th>
 									<td>Consectetur Adipiscing</td>
 									<td>14/14<i class="fa fa-flag-checkered"></i></td>
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="card-footer text-primary bg-danger">
-						3 pilotos
-						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
 					</div>
 				</div>
 				<br />
@@ -251,13 +211,6 @@
 					</div>
 					<div class="card-body">
 						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Janelas</th>
-								</tr>
-							</thead>
 							<tbody>
 								<tr>
 									<th scope="row"><input type="radio" name="radio_4"/></th>
@@ -274,22 +227,18 @@
 									<td>Elit Sed Do</td>
 									<td>5/9<i class="fa fa-flag-o"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_4" disabled/></th>
 									<td>Elit Sed Do</td>
 									<td>9/9<i class="fa fa-flag-checkered"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_4" disabled/></th>
 									<td>Elit Sed Do</td>
 									<td>8/8<i class="fa fa-flag-checkered"></i></td>
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="card-footer text-primary bg-success">
-						5  pilotos
-						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
 					</div>
 				</div>
 				<br />
@@ -308,13 +257,6 @@
 					</div>
 					<div class="card-body">
 						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Janelas</th>
-								</tr>
-							</thead>
 							<tbody>
 								<tr>
 									<th scope="row"><input type="radio" name="radio_5"/></th>
@@ -331,17 +273,17 @@
 									<td>Eiusmod Tempor</td>
 									<td>4/7<i class="fa fa-flag-o"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_5" disabled/></th>
 									<td>Eiusmod Tempor</td>
 									<td>7/7<i class="fa fa-flag-checkered"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_5" disabled/></th>
 									<td>Eiusmod Tempor</td>
 									<td>7/7<i class="fa fa-flag-checkered"></i></td>
 								</tr>
-								<tr class="table-danger">
+								<tr>
 									<th scope="row"><input type="radio" name="radio_5" disabled/></th>
 									<td>Eiusmod Tempor</td>
 									<td>7/7<i class="fa fa-flag-checkered"></i></td>
@@ -349,9 +291,42 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="card-footer text-primary bg-info">
-						6 pilotos
-						<!-- <button class="btn btn-outline-primary">Confirmar</button> -->
+				</div>
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card bg-dark">
+					<h3 class="card-header text-white">Equipe 7
+					<span class="float-right">27/44</span>
+					</h3>
+					<div class="card-body">
+						<h5 class="card-title text-white">
+							<span>Deck </span>
+							<i class="fa fa-flag-o"></i>
+						</h5>
+					</div>
+					<div class="card-body text-white">
+						<table class="table table-hover">
+							<tbody>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_3"/></th>
+									<td>Deck 1</td>
+									<td>1/15<i class="fa fa-flag"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_3" checked/></th>
+									<td>Deck 2</td>
+									<td>12/15<i class="fa fa-flag-o"></i></td>
+								</tr>
+								<tr>
+									<th scope="row"><input type="radio" name="radio_3" disabled/></th>
+									<td>Deck 3</td>
+									<td>14/14<i class="fa fa-flag-checkered"></i></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 				<br />
@@ -395,6 +370,7 @@
 	<script src="../js/popper.js"></script>
 	<script src="../js/bootstrap.js"></script>
 	<script src="../js/angular.js"></script>
+	<script src="../js/loading-bar.js"></script>
 	
 	<script src="../js/app/app.js"></script>
 	<script src="../js/app/config.js"></script>

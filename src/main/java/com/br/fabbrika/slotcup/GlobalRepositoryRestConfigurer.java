@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 
+import com.br.fabbrika.slotcup.model.Corrida;
+
 @Configuration
 public class GlobalRepositoryRestConfigurer extends RepositoryRestConfigurerAdapter {
 
@@ -14,6 +16,8 @@ public class GlobalRepositoryRestConfigurer extends RepositoryRestConfigurerAdap
                   .allowedOrigins("*")
                   .allowedHeaders("*")
                   .allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+        
+        config.exposeIdsFor(Corrida.class);
      }
 
 }
